@@ -15,5 +15,5 @@ All category methods have prefix 'st_'. It might look ugly but it could avoid na
 
 LICENSE
 ---
-MIT License
+MIT License  
 Please read LICENSE.txt
