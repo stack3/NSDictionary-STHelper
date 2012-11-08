@@ -5,7 +5,7 @@ Xcode version: 4.4 and over with ARC.
 
 USAGE
 ---
-Get NSInteger value. If the object in dictionary is not NSNumber or NSString of integer, it will return nil.
+Get NSInteger value. If the object in dictionary is not NSNumber or NSString of integer, it will return 0.
 `NSInteger value = [dict st_integerForKey:@"value"]`
   
 Get NSString value from a nested NSDictionary.  
