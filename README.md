@@ -1,4 +1,4 @@
-USAGE:
+USAGE:  
 Get NSInteger value. If the object in dictionary is not NSNumber or NSString of integer, it will return nil.
 `NSInteger value = [dict st_integerForKey:@"value"]`
   
