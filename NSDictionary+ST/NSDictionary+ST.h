@@ -56,6 +56,8 @@
 - (float)st_floatForKey:(NSString*)key defaultValue:(float)defaultValue;
 - (double)st_doubleForKey:(NSString*)key;
 - (double)st_doubleForKey:(NSString*)key defaultValue:(double)defaultValue;
+- (NSTimeInterval)st_timeIntervalForKey:(NSString*)key;
+- (NSTimeInterval)st_timeIntervalForKey:(NSString*)key defaultValue:(NSTimeInterval)defaultValue;
 - (NSString*)st_stringForKey:(NSString*)key;
 - (NSString*)st_stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue;
 - (NSArray*)st_arrayForKey:(NSString*)key;
@@ -64,6 +66,8 @@
 - (NSDictionary*)st_dictionaryForKey:(NSString*)key defaultValue:(NSDictionary*)defaultValue;
 - (NSDate*)st_dateForKey:(NSString*)key;
 - (NSDate*)st_dateForKey:(NSString*)key defaultValue:(NSDate*)defaultValue;
+- (id)st_dataForKey:(NSString*)key;
+- (id)st_dataForKey:(NSString *)key defaultValue:(id)defaultValue;
 
 - (NSObject*)st_objectForPath:(NSString*)path;
 - (NSObject*)st_objectForPath:(NSString*)path defaultValue:(NSObject*)defaultValue;

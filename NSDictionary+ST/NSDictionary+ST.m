@@ -185,6 +185,14 @@
 	}
 }
 
+- (NSTimeInterval)st_timeIntervalForKey:(NSString*)key {
+	return [self st_doubleForKey:key defaultValue:0];
+}
+
+- (NSTimeInterval)st_timeIntervalForKey:(NSString*)key defaultValue:(NSTimeInterval)defaultValue {
+    return [self st_doubleForKey:key defaultValue:defaultValue];
+}
+
 - (NSString*)st_stringForKey:(NSString*)key {
 	return [self st_stringForKey:key defaultValue:nil];
 }
@@ -237,6 +245,21 @@
 - (NSDate*)st_dateForKey:(NSString*)key defaultValue:(NSDate*)defaultValue {
 	id obj = [self objectForKey:key];
     if (obj && [obj isKindOfClass:[NSDate class]]) {
+		return obj;
+	} else {
+		return defaultValue;
+	}
+}
+
+- (id)st_dataForKey:(NSString*)key
+{
+    return [self st_dataForKey:key defaultValue:nil];
+}
+
+- (id)st_dataForKey:(NSString *)key defaultValue:(id)defaultValue
+{
+    id obj = [self objectForKey:key];
+	if (obj && [obj isKindOfClass:[NSData class]]) {
 		return obj;
 	} else {
 		return defaultValue;
