@@ -1,5 +1,5 @@
 //
-//  NSDictionary+ST.h
+//  NSDictionary+STHelper.h
 //
 //  Copyright (c) 2012 stack3.net (http://stack3.net/)
 //
@@ -34,7 +34,7 @@
  *     -> You can get value from a nested dictionary.
  *        These methods are useful to get values from dictionary parsed JSON.
  */
-@interface NSDictionary (ST)
+@interface NSDictionary (STHelper)
 
 - (id)st_objectForKey:(NSString*)key;
 - (id)st_objectForKey:(NSString*)key defaultValue:(id)defaultValue;

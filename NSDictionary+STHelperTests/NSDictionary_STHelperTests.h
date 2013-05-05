@@ -1,6 +1,6 @@
 //
-//  NSDictionary_STTests.h
-//  NSDictionary+STTests
+//  NSDictionary_STHelperTests.h
+//  NSDictionary+STHelperTests
 //
 //  Copyright (c) 2012 stack3.net (http://stack3.net/)
 //
@@ -25,6 +25,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface NSDictionary_STTests : SenTestCase
+@interface NSDictionary_STHelperTests : SenTestCase
 
 @end

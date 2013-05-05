@@ -11,10 +11,10 @@
 		1E2FA3F51649DFDD00DD1748 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2FA3F41649DFDD00DD1748 /* SenTestingKit.framework */; };
 		1E2FA3F71649DFDD00DD1748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2FA3F61649DFDD00DD1748 /* UIKit.framework */; };
 		1E2FA3F81649DFDD00DD1748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2FA3E51649DFDD00DD1748 /* Foundation.framework */; };
-		1E2FA3FB1649DFDE00DD1748 /* libNSDictionary+ST.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2FA3E21649DFDD00DD1748 /* libNSDictionary+ST.a */; };
+		1E2FA3FB1649DFDE00DD1748 /* libNSDictionary+STHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2FA3E21649DFDD00DD1748 /* libNSDictionary+STHelper.a */; };
 		1E2FA4011649DFDE00DD1748 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2FA3FF1649DFDE00DD1748 /* InfoPlist.strings */; };
-		1E2FA4041649DFDE00DD1748 /* NSDictionary_STTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA4031649DFDE00DD1748 /* NSDictionary_STTests.m */; };
-		1E2FA4141649E06100DD1748 /* NSDictionary+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA4111649E06100DD1748 /* NSDictionary+ST.m */; };
+		1E2FA4141649E06100DD1748 /* NSDictionary+STHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA4111649E06100DD1748 /* NSDictionary+STHelper.m */; };
+		B7DFBBF017363AAF00BAEE9F /* NSDictionary_STHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DFBBEF17363AAF00BAEE9F /* NSDictionary_STHelperTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +23,7 @@
 			containerPortal = 1E2FA3D91649DFDD00DD1748 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1E2FA3E11649DFDD00DD1748;
-			remoteInfo = "NSDictionary+ST";
+			remoteInfo = "NSDictionary+STHelper";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,18 +40,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1E2FA3E21649DFDD00DD1748 /* libNSDictionary+ST.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNSDictionary+ST.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E2FA3E21649DFDD00DD1748 /* libNSDictionary+STHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNSDictionary+STHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E2FA3E51649DFDD00DD1748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1E2FA3E91649DFDD00DD1748 /* NSDictionary+ST-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ST-Prefix.pch"; sourceTree = "<group>"; };
-		1E2FA3F31649DFDD00DD1748 /* NSDictionary+STTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NSDictionary+STTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E2FA3E91649DFDD00DD1748 /* NSDictionary+STHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+STHelper-Prefix.pch"; sourceTree = "<group>"; };
+		1E2FA3F31649DFDD00DD1748 /* NSDictionary+STHelperTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NSDictionary+STHelperTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E2FA3F41649DFDD00DD1748 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1E2FA3F61649DFDD00DD1748 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		1E2FA3FE1649DFDE00DD1748 /* NSDictionary+STTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSDictionary+STTests-Info.plist"; sourceTree = "<group>"; };
+		1E2FA3FE1649DFDE00DD1748 /* NSDictionary+STHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSDictionary+STHelperTests-Info.plist"; sourceTree = "<group>"; };
 		1E2FA4001649DFDE00DD1748 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1E2FA4021649DFDE00DD1748 /* NSDictionary_STTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDictionary_STTests.h; sourceTree = "<group>"; };
-		1E2FA4031649DFDE00DD1748 /* NSDictionary_STTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_STTests.m; sourceTree = "<group>"; };
-		1E2FA4101649E06100DD1748 /* NSDictionary+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ST.h"; sourceTree = "<group>"; };
-		1E2FA4111649E06100DD1748 /* NSDictionary+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ST.m"; sourceTree = "<group>"; };
+		1E2FA4101649E06100DD1748 /* NSDictionary+STHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+STHelper.h"; sourceTree = "<group>"; };
+		1E2FA4111649E06100DD1748 /* NSDictionary+STHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+STHelper.m"; sourceTree = "<group>"; };
+		B7DFBBEE17363AAF00BAEE9F /* NSDictionary_STHelperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_STHelperTests.h; sourceTree = "<group>"; };
+		B7DFBBEF17363AAF00BAEE9F /* NSDictionary_STHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_STHelperTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 				1E2FA3F51649DFDD00DD1748 /* SenTestingKit.framework in Frameworks */,
 				1E2FA3F71649DFDD00DD1748 /* UIKit.framework in Frameworks */,
 				1E2FA3F81649DFDD00DD1748 /* Foundation.framework in Frameworks */,
-				1E2FA3FB1649DFDE00DD1748 /* libNSDictionary+ST.a in Frameworks */,
+				1E2FA3FB1649DFDE00DD1748 /* libNSDictionary+STHelper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +80,8 @@
 		1E2FA3D71649DFDD00DD1748 = {
 			isa = PBXGroup;
 			children = (
-				1E2FA3E71649DFDD00DD1748 /* NSDictionary+ST */,
-				1E2FA3FC1649DFDE00DD1748 /* NSDictionary+STTests */,
+				1E2FA3E71649DFDD00DD1748 /* NSDictionary+STHelper */,
+				1E2FA3FC1649DFDE00DD1748 /* NSDictionary+STHelperTests */,
 				1E2FA3E41649DFDD00DD1748 /* Frameworks */,
 				1E2FA3E31649DFDD00DD1748 /* Products */,
 			);
@@ -90,8 +90,8 @@
 		1E2FA3E31649DFDD00DD1748 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1E2FA3E21649DFDD00DD1748 /* libNSDictionary+ST.a */,
-				1E2FA3F31649DFDD00DD1748 /* NSDictionary+STTests.octest */,
+				1E2FA3E21649DFDD00DD1748 /* libNSDictionary+STHelper.a */,
+				1E2FA3F31649DFDD00DD1748 /* NSDictionary+STHelperTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,38 +106,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1E2FA3E71649DFDD00DD1748 /* NSDictionary+ST */ = {
+		1E2FA3E71649DFDD00DD1748 /* NSDictionary+STHelper */ = {
 			isa = PBXGroup;
 			children = (
-				1E2FA4101649E06100DD1748 /* NSDictionary+ST.h */,
-				1E2FA4111649E06100DD1748 /* NSDictionary+ST.m */,
+				1E2FA4101649E06100DD1748 /* NSDictionary+STHelper.h */,
+				1E2FA4111649E06100DD1748 /* NSDictionary+STHelper.m */,
 				1E2FA3E81649DFDD00DD1748 /* Supporting Files */,
 			);
-			path = "NSDictionary+ST";
+			path = "NSDictionary+STHelper";
 			sourceTree = "<group>";
 		};
 		1E2FA3E81649DFDD00DD1748 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1E2FA3E91649DFDD00DD1748 /* NSDictionary+ST-Prefix.pch */,
+				1E2FA3E91649DFDD00DD1748 /* NSDictionary+STHelper-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1E2FA3FC1649DFDE00DD1748 /* NSDictionary+STTests */ = {
+		1E2FA3FC1649DFDE00DD1748 /* NSDictionary+STHelperTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E2FA4021649DFDE00DD1748 /* NSDictionary_STTests.h */,
-				1E2FA4031649DFDE00DD1748 /* NSDictionary_STTests.m */,
+				B7DFBBEE17363AAF00BAEE9F /* NSDictionary_STHelperTests.h */,
+				B7DFBBEF17363AAF00BAEE9F /* NSDictionary_STHelperTests.m */,
 				1E2FA3FD1649DFDE00DD1748 /* Supporting Files */,
 			);
-			path = "NSDictionary+STTests";
+			path = "NSDictionary+STHelperTests";
 			sourceTree = "<group>";
 		};
 		1E2FA3FD1649DFDE00DD1748 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1E2FA3FE1649DFDE00DD1748 /* NSDictionary+STTests-Info.plist */,
+				1E2FA3FE1649DFDE00DD1748 /* NSDictionary+STHelperTests-Info.plist */,
 				1E2FA3FF1649DFDE00DD1748 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -146,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1E2FA3E11649DFDD00DD1748 /* NSDictionary+ST */ = {
+		1E2FA3E11649DFDD00DD1748 /* NSDictionary+STHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E2FA4071649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+ST" */;
+			buildConfigurationList = 1E2FA4071649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+STHelper" */;
 			buildPhases = (
 				1E2FA3DE1649DFDD00DD1748 /* Sources */,
 				1E2FA3DF1649DFDD00DD1748 /* Frameworks */,
@@ -158,14 +158,14 @@
 			);
 			dependencies = (
 			);
-			name = "NSDictionary+ST";
-			productName = "NSDictionary+ST";
-			productReference = 1E2FA3E21649DFDD00DD1748 /* libNSDictionary+ST.a */;
+			name = "NSDictionary+STHelper";
+			productName = "NSDictionary+STHelper";
+			productReference = 1E2FA3E21649DFDD00DD1748 /* libNSDictionary+STHelper.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		1E2FA3F21649DFDD00DD1748 /* NSDictionary+STTests */ = {
+		1E2FA3F21649DFDD00DD1748 /* NSDictionary+STHelperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E2FA40A1649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+STTests" */;
+			buildConfigurationList = 1E2FA40A1649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+STHelperTests" */;
 			buildPhases = (
 				1E2FA3EE1649DFDD00DD1748 /* Sources */,
 				1E2FA3EF1649DFDD00DD1748 /* Frameworks */,
@@ -177,9 +177,9 @@
 			dependencies = (
 				1E2FA3FA1649DFDE00DD1748 /* PBXTargetDependency */,
 			);
-			name = "NSDictionary+STTests";
-			productName = "NSDictionary+STTests";
-			productReference = 1E2FA3F31649DFDD00DD1748 /* NSDictionary+STTests.octest */;
+			name = "NSDictionary+STHelperTests";
+			productName = "NSDictionary+STHelperTests";
+			productReference = 1E2FA3F31649DFDD00DD1748 /* NSDictionary+STHelperTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = EIMEI;
 			};
-			buildConfigurationList = 1E2FA3DC1649DFDD00DD1748 /* Build configuration list for PBXProject "NSDictionary+ST" */;
+			buildConfigurationList = 1E2FA3DC1649DFDD00DD1748 /* Build configuration list for PBXProject "NSDictionary+STHelper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -203,8 +203,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E2FA3E11649DFDD00DD1748 /* NSDictionary+ST */,
-				1E2FA3F21649DFDD00DD1748 /* NSDictionary+STTests */,
+				1E2FA3E11649DFDD00DD1748 /* NSDictionary+STHelper */,
+				1E2FA3F21649DFDD00DD1748 /* NSDictionary+STHelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E2FA4141649E06100DD1748 /* NSDictionary+ST.m in Sources */,
+				1E2FA4141649E06100DD1748 /* NSDictionary+STHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E2FA4041649DFDE00DD1748 /* NSDictionary_STTests.m in Sources */,
+				B7DFBBF017363AAF00BAEE9F /* NSDictionary_STHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +258,7 @@
 /* Begin PBXTargetDependency section */
 		1E2FA3FA1649DFDE00DD1748 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1E2FA3E11649DFDD00DD1748 /* NSDictionary+ST */;
+			target = 1E2FA3E11649DFDD00DD1748 /* NSDictionary+STHelper */;
 			targetProxy = 1E2FA3F91649DFDE00DD1748 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -329,12 +329,12 @@
 			buildSettings = {
 				DSTROOT = /tmp/NSDictionary_ST.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSDictionary+ST/NSDictionary+ST-Prefix.pch";
+				GCC_PREFIX_HEADER = "NSDictionary+STHelper/NSDictionary+STHelper-Prefix.pch";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NSDictionary+STHelper";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -344,12 +344,12 @@
 			buildSettings = {
 				DSTROOT = /tmp/NSDictionary_ST.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSDictionary+ST/NSDictionary+ST-Prefix.pch";
+				GCC_PREFIX_HEADER = "NSDictionary+STHelper/NSDictionary+STHelper-Prefix.pch";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NSDictionary+STHelper";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -362,10 +362,10 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSDictionary+ST/NSDictionary+ST-Prefix.pch";
-				INFOPLIST_FILE = "NSDictionary+STTests/NSDictionary+STTests-Info.plist";
+				GCC_PREFIX_HEADER = "NSDictionary+STHelper/NSDictionary+STHelper-Prefix.pch";
+				INFOPLIST_FILE = "NSDictionary+STHelperTests/NSDictionary+STHelperTests-Info.plist";
 				OTHER_TEST_FLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NSDictionary+STHelperTests";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -378,10 +378,10 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSDictionary+ST/NSDictionary+ST-Prefix.pch";
-				INFOPLIST_FILE = "NSDictionary+STTests/NSDictionary+STTests-Info.plist";
+				GCC_PREFIX_HEADER = "NSDictionary+STHelper/NSDictionary+STHelper-Prefix.pch";
+				INFOPLIST_FILE = "NSDictionary+STHelperTests/NSDictionary+STHelperTests-Info.plist";
 				OTHER_TEST_FLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NSDictionary+STHelperTests";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -389,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E2FA3DC1649DFDD00DD1748 /* Build configuration list for PBXProject "NSDictionary+ST" */ = {
+		1E2FA3DC1649DFDD00DD1748 /* Build configuration list for PBXProject "NSDictionary+STHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E2FA4051649DFDE00DD1748 /* Debug */,
@@ -398,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1E2FA4071649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+ST" */ = {
+		1E2FA4071649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+STHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E2FA4081649DFDE00DD1748 /* Debug */,
@@ -407,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1E2FA40A1649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+STTests" */ = {
+		1E2FA40A1649DFDE00DD1748 /* Build configuration list for PBXNativeTarget "NSDictionary+STHelperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1E2FA40B1649DFDE00DD1748 /* Debug */,

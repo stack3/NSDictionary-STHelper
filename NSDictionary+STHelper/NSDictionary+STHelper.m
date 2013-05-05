@@ -1,5 +1,5 @@
 //
-//  NSDictionary+ST.m
+//  NSDictionary+STHelper.m
 //
 //  Copyright (c) 2012 stack3.net (http://stack3.net/)
 //
@@ -22,9 +22,9 @@
 //  THE SOFTWARE.
 //
 
-#import "NSDictionary+ST.h"
+#import "NSDictionary+STHelper.h"
 
-@implementation NSDictionary (ST)
+@implementation NSDictionary (STHelper)
 
 #pragma mark -
 #pragma mark ForKey

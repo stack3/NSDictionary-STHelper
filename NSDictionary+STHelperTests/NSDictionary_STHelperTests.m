@@ -1,6 +1,6 @@
 //
-//  NSDictionary_STTests.m
-//  NSDictionary+STTests
+//  NSDictionary_STHelperTests.m
+//  NSDictionary+STHelperTests
 //
 //  Copyright (c) 2012 stack3.net (http://stack3.net/)
 //
@@ -23,10 +23,10 @@
 //  THE SOFTWARE.
 //
 
-#import "NSDictionary_STTests.h"
-#import "NSDictionary+ST.h"
+#import "NSDictionary_STHelperTests.h"
+#import "NSDictionary+STHelper.h"
 
-@implementation NSDictionary_STTests
+@implementation NSDictionary_STHelperTests
 
 - (void)setUp {
     [super setUp];
