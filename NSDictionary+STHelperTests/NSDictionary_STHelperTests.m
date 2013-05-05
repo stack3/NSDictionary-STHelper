@@ -92,16 +92,16 @@
     @"max" : [NSString stringWithFormat:@"%lu", NSUIntegerMax],
     @"one-two-three" : @"123",
     };
-    STAssertEquals((NSUInteger)NSUIntegerMax, [dict st_uintegerForKey:@"max"], nil);
-    STAssertEquals((NSUInteger)123, [dict st_uintegerForKey:@"one-two-three"], nil);
-    STAssertEquals((NSUInteger)345, [dict st_uintegerForKey:@"nil" defaultValue:345], nil);
+    STAssertEquals((NSUInteger)NSUIntegerMax, [dict st_unsignedIntegerForKey:@"max"], nil);
+    STAssertEquals((NSUInteger)123, [dict st_unsignedIntegerForKey:@"one-two-three"], nil);
+    STAssertEquals((NSUInteger)345, [dict st_unsignedIntegerForKey:@"nil" defaultValue:345], nil);
     
     dict = @{
     @"max" : [NSNumber numberWithUnsignedInt:NSUIntegerMax],
     @"zero" : [NSNumber numberWithInt:0],
     };
-    STAssertEquals((NSUInteger)NSUIntegerMax, [dict st_uintegerForKey:@"max"], nil);
-    STAssertEquals((NSUInteger)0, [dict st_uintegerForKey:@"zero"], nil);
+    STAssertEquals((NSUInteger)NSUIntegerMax, [dict st_unsignedIntegerForKey:@"max"], nil);
+    STAssertEquals((NSUInteger)0, [dict st_unsignedIntegerForKey:@"zero"], nil);
     //
     // int32ForKey
     //

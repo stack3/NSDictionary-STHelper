@@ -94,15 +94,41 @@
 - (NSDate *)st_dateForKey:(NSString *)key;
 - (NSData *)st_dataForKey:(NSString *)key defaultValue:(NSData *)defaultValue;
 - (NSData *)st_dataForKey:(NSString *)key;
+- (NSURL *)st_URLForKey:(NSString *)key defaultValue:(NSURL *)defaultValue;
+- (NSURL *)st_URLForKey:(NSString *)key;
 
 #pragma mark - ForPath
 
-- (BOOL)st_boolForPath:(NSString *)path;
 - (BOOL)st_boolForPath:(NSString *)path defaultValue:(BOOL)defaultValue;
-- (NSInteger)st_integerForPath:(NSString *)path;
+- (BOOL)st_boolForPath:(NSString *)path;
 - (NSInteger)st_integerForPath:(NSString *)path defaultValue:(NSInteger)defaultValue;
-- (NSUInteger)st_uintegerForPath:(NSString *)path;
-- (NSUInteger)st_uintegerForPath:(NSString *)path defaultValue:(NSUInteger)defaultValue;
+- (NSInteger)st_integerForPath:(NSString *)path;
+- (NSUInteger)st_unsignedIntegerForPath:(NSString *)path defaultValue:(NSUInteger)defaultValue;
+- (NSUInteger)st_unsignedIntegerForPath:(NSString *)path;
+- (char)st_charForPath:(NSString *)key defaultValue:(char)defaultValue;
+- (char)st_charForPath:(NSString *)key;
+- (unsigned char)st_unsignedCharForPath:(NSString *)key defaultValue:(unsigned char)defaultValue;
+- (unsigned char)st_unsignedCharForPath:(NSString *)key;
+- (short)st_shortForPath:(NSString *)key defaultValue:(short)defaultValue;
+- (short)st_shortForPath:(NSString *)key;
+- (unsigned short)st_unsignedShortForPath:(NSString *)key defaultValue:(unsigned short)defaultValue;
+- (unsigned short)st_unsignedShortForPath:(NSString *)key;
+- (long)st_longForPath:(NSString *)key defaultValue:(long)defaultValue;
+- (long)st_longForPath:(NSString *)key;
+- (unsigned long)st_unsignedLongForPath:(NSString *)key defaultValue:(unsigned long)defaultValue;
+- (unsigned long)st_unsignedLongForPath:(NSString *)key;
+- (long long)st_longLongForPath:(NSString *)key defaultValue:(long long)defaultValue;
+- (long long)st_longLongForPath:(NSString *)key;
+- (unsigned long long)st_unsignedLongLongForPath:(NSString *)key defaultValue:(unsigned long long)defaultValue;
+- (unsigned long long)st_unsignedLongLongForPath:(NSString *)key;
+- (int8_t)st_int8ForPath:(NSString *)path;
+- (int8_t)st_int8ForPath:(NSString *)path defaultValue:(int8_t)defaultValue;
+- (uint8_t)st_uint8ForPath:(NSString *)path;
+- (uint8_t)st_uint8ForPath:(NSString *)path defaultValue:(uint8_t)defaultValue;
+- (int16_t)st_int16ForPath:(NSString *)path;
+- (int16_t)st_int16ForPath:(NSString *)path defaultValue:(int16_t)defaultValue;
+- (uint16_t)st_uint16ForPath:(NSString *)path;
+- (uint16_t)st_uint16ForPath:(NSString *)path defaultValue:(uint16_t)defaultValue;
 - (int32_t)st_int32ForPath:(NSString *)path;
 - (int32_t)st_int32ForPath:(NSString *)path defaultValue:(int32_t)defaultValue;
 - (uint32_t)st_uint32ForPath:(NSString *)path;
@@ -125,5 +151,9 @@
 - (NSDictionary *)st_dictionaryForPath:(NSString *)path defaultValue:(NSDictionary *)defaultValue;
 - (NSDate *)st_dateForPath:(NSString *)path;
 - (NSDate *)st_dateForPath:(NSString *)path defaultValue:(NSDate *)defaultValue;
+- (NSData *)st_dataForPath:(NSString *)path;
+- (NSData *)st_dataForPath:(NSString *)path defaultValue:(NSData *)defaultValue;
+- (NSURL *)st_URLForPath:(NSString *)key defaultValue:(NSURL *)defaultValue;
+- (NSURL *)st_URLForPath:(NSString *)key;
 
 @end
