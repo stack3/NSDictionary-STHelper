@@ -86,7 +86,7 @@
     STAssertEquals(INT32_MAX, [dict st_integerForKey:@"max"], nil);
     STAssertEquals(0, [dict st_integerForKey:@"zero"], nil);
     //
-    // uintegerForKey
+    // unsignedIntegerForKey
     //
     dict = @{
     @"max" : [NSString stringWithFormat:@"%lu", NSUIntegerMax],
@@ -103,81 +103,186 @@
     STAssertEquals((NSUInteger)NSUIntegerMax, [dict st_unsignedIntegerForKey:@"max"], nil);
     STAssertEquals((NSUInteger)0, [dict st_unsignedIntegerForKey:@"zero"], nil);
     //
-    // int32ForKey
+    // charForKey
     //
     dict = @{
-    @"min" : [NSString stringWithFormat:@"%d", INT32_MIN],
-    @"max" : [NSString stringWithFormat:@"%d", INT32_MAX],
-    @"one-two-three" : @"-123",
-    };
-    STAssertEquals(INT32_MIN, [dict st_int32ForKey:@"min"], nil);
-    STAssertEquals(INT32_MAX, [dict st_int32ForKey:@"max"], nil);
-    STAssertEquals(-123, [dict st_int32ForKey:@"one-two-three"], nil);
-    STAssertEquals(345, [dict st_int32ForKey:@"nil" defaultValue:345], nil);
+             @"min" : [NSString stringWithFormat:@"%d", CHAR_MIN],
+             @"max" : [NSString stringWithFormat:@"%d", CHAR_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((char)CHAR_MIN, [dict st_charForKey:@"min"], nil);
+    STAssertEquals((char)CHAR_MAX, [dict st_charForKey:@"max"], nil);
+    STAssertEquals((char)123, [dict st_charForKey:@"one-two-three"], nil);
+    STAssertEquals((char)124, [dict st_charForKey:@"nil" defaultValue:124], nil);
     
     dict = @{
-    @"min" : [NSNumber numberWithInt:INT32_MIN],
-    @"max" : [NSNumber numberWithInt:INT32_MAX],
-    @"one-two-three" : [NSNumber numberWithInt:-123],
-    };
-    STAssertEquals(INT32_MIN, [dict st_int32ForKey:@"min"], nil);
-    STAssertEquals(INT32_MAX, [dict st_int32ForKey:@"max"], nil);
-    STAssertEquals(-123, [dict st_int32ForKey:@"one-two-three"], nil);
+             @"min" : [NSNumber numberWithChar:CHAR_MIN],
+             @"max" : [NSNumber numberWithChar:CHAR_MAX],
+             @"zero" : [NSNumber numberWithChar:0],
+             };
+    STAssertEquals((char)CHAR_MIN, [dict st_charForKey:@"min"], nil);
+    STAssertEquals((char)CHAR_MAX, [dict st_charForKey:@"max"], nil);
+    STAssertEquals((char)0, [dict st_charForKey:@"zero"], nil);
     //
-    // uint32ForKey
+    // unsignedCharForKey
     //
     dict = @{
-    @"max" : [NSString stringWithFormat:@"%u", UINT32_MAX],
-    @"one-two-three" : @"123",
-    };
-    STAssertEquals(UINT32_MAX, [dict st_uint32ForKey:@"max"], nil);
-    STAssertEquals((uint32_t)123, [dict st_uint32ForKey:@"one-two-three"], nil);
-    STAssertEquals((uint32_t)345, [dict st_uint32ForKey:@"zero" defaultValue:345], nil);
+             @"max" : [NSString stringWithFormat:@"%u", UCHAR_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((unsigned char)UCHAR_MAX, [dict st_unsignedCharForKey:@"max"], nil);
+    STAssertEquals((unsigned char)123, [dict st_unsignedCharForKey:@"one-two-three"], nil);
+    STAssertEquals((unsigned char)210, [dict st_unsignedCharForKey:@"nil" defaultValue:210], nil);
     
     dict = @{
-    @"max" : [NSNumber numberWithUnsignedInt:UINT32_MAX],
-    @"zero" : [NSNumber numberWithUnsignedInt:0],
-    };
-    STAssertEquals(UINT_MAX, [dict st_uint32ForKey:@"max"], nil);
-    STAssertEquals((uint32_t)0, [dict st_uint32ForKey:@"zero"], nil);
+             @"max" : [NSNumber numberWithUnsignedChar:UCHAR_MAX],
+             @"zero" : [NSNumber numberWithUnsignedChar:0],
+             };
+    STAssertEquals((unsigned char)UCHAR_MAX, [dict st_unsignedCharForKey:@"max"], nil);
+    STAssertEquals((unsigned char)0, [dict st_unsignedCharForKey:@"zero"], nil);
     //
-    // int64ForKey
+    // shortForKey
     //
     dict = @{
-    @"min" : [NSString stringWithFormat:@"%lld", LONG_LONG_MIN],
-    @"max" : [NSString stringWithFormat:@"%lld", LONG_LONG_MAX],
-    @"one-two-three" : @"123",
-    };
-    STAssertEquals(LONG_LONG_MIN, [dict st_int64ForKey:@"min"], nil);
-    STAssertEquals(LONG_LONG_MAX, [dict st_int64ForKey:@"max"], nil);
-    STAssertEquals((int64_t)123, [dict st_int64ForKey:@"one-two-three"], nil);
-    STAssertEquals((int64_t)345, [dict st_int64ForKey:@"nil" defaultValue:345], nil);
+             @"min" : [NSString stringWithFormat:@"%d", SHRT_MIN],
+             @"max" : [NSString stringWithFormat:@"%d", SHRT_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((short)SHRT_MIN, [dict st_shortForKey:@"min"], nil);
+    STAssertEquals((short)SHRT_MAX, [dict st_shortForKey:@"max"], nil);
+    STAssertEquals((short)123, [dict st_shortForKey:@"one-two-three"], nil);
+    STAssertEquals((short)124, [dict st_shortForKey:@"nil" defaultValue:124], nil);
     
     dict = @{
-    @"min" : [NSNumber numberWithLongLong:LONG_LONG_MIN],
-    @"max" : [NSNumber numberWithLongLong:LONG_LONG_MAX],
-    @"one-two-three" : [NSNumber numberWithLongLong:-123],
-    };
-    STAssertEquals(LONG_LONG_MIN, [dict st_int64ForKey:@"min"], nil);
-    STAssertEquals(LONG_LONG_MAX, [dict st_int64ForKey:@"max"], nil);
-    STAssertEquals((int64_t)-123, [dict st_int64ForKey:@"one-two-three"], nil);
+             @"min" : [NSNumber numberWithShort:SHRT_MIN],
+             @"max" : [NSNumber numberWithShort:SHRT_MAX],
+             @"zero" : [NSNumber numberWithShort:0],
+             };
+    STAssertEquals((short)SHRT_MIN, [dict st_shortForKey:@"min"], nil);
+    STAssertEquals((short)SHRT_MAX, [dict st_shortForKey:@"max"], nil);
+    STAssertEquals((short)0, [dict st_shortForKey:@"zero"], nil);
     //
-    // uint64ForKey
+    // unsignedShortForKey
     //
     dict = @{
-    @"max" : [NSString stringWithFormat:@"%llu", ULONG_LONG_MAX],
-    @"one-two-three" : @"123",
-    };
-    STAssertEquals(ULONG_LONG_MAX, [dict st_uint64ForKey:@"max"], nil);
-    STAssertEquals((uint64_t)123, [dict st_uint64ForKey:@"one-two-three"], nil);
-    STAssertEquals((uint64_t)345, [dict st_uint64ForKey:@"nil" defaultValue:345], nil);
+             @"max" : [NSString stringWithFormat:@"%u", USHRT_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((unsigned short)USHRT_MAX, [dict st_unsignedShortForKey:@"max"], nil);
+    STAssertEquals((unsigned short)123, [dict st_unsignedShortForKey:@"one-two-three"], nil);
+    STAssertEquals((unsigned short)210, [dict st_unsignedShortForKey:@"nil" defaultValue:210], nil);
     
     dict = @{
-    @"max" : [NSNumber numberWithUnsignedLongLong:ULONG_LONG_MAX],
-    @"zero" : [NSNumber numberWithUnsignedLongLong:0],
+             @"max" : [NSNumber numberWithUnsignedShort:USHRT_MAX],
+             @"zero" : [NSNumber numberWithUnsignedShort:0],
+             };
+    STAssertEquals((unsigned short)USHRT_MAX, [dict st_unsignedShortForKey:@"max"], nil);
+    STAssertEquals((unsigned short)0, [dict st_unsignedShortForKey:@"zero"], nil);
+    //
+    // longForKey
+    //
+    dict = @{
+             @"min" : [NSString stringWithFormat:@"%ld", LONG_MIN],
+             @"max" : [NSString stringWithFormat:@"%ld", LONG_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((long)LONG_MIN, [dict st_longForKey:@"min"], nil);
+    STAssertEquals((long)LONG_MAX, [dict st_longForKey:@"max"], nil);
+    STAssertEquals((long)123, [dict st_longForKey:@"one-two-three"], nil);
+    STAssertEquals((long)124, [dict st_longForKey:@"nil" defaultValue:124], nil);
+    
+    dict = @{
+             @"min" : [NSNumber numberWithLong:LONG_MIN],
+             @"max" : [NSNumber numberWithLong:LONG_MAX],
+             @"zero" : [NSNumber numberWithLong:0],
+             };
+    STAssertEquals((long)LONG_MIN, [dict st_longForKey:@"min"], nil);
+    STAssertEquals((long)LONG_MAX, [dict st_longForKey:@"max"], nil);
+    STAssertEquals((long)0, [dict st_longForKey:@"zero"], nil);
+    //
+    // unsignedLongForKey
+    //
+    dict = @{
+             @"max" : [NSString stringWithFormat:@"%lu", ULONG_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((unsigned long)ULONG_MAX, [dict st_unsignedLongForKey:@"max"], nil);
+    STAssertEquals((unsigned long)123, [dict st_unsignedLongForKey:@"one-two-three"], nil);
+    STAssertEquals((unsigned long)210, [dict st_unsignedLongForKey:@"nil" defaultValue:210], nil);
+    
+    dict = @{
+             @"max" : [NSNumber numberWithUnsignedLong:ULONG_MAX],
+             @"zero" : [NSNumber numberWithUnsignedLong:0],
+             };
+    STAssertEquals((unsigned long)ULONG_MAX, [dict st_unsignedLongForKey:@"max"], nil);
+    STAssertEquals((unsigned long)0, [dict st_unsignedLongForKey:@"zero"], nil);
+    //
+    // longLongForKey
+    //
+    dict = @{
+             @"min" : [NSString stringWithFormat:@"%lld", LLONG_MIN],
+             @"max" : [NSString stringWithFormat:@"%lld", LLONG_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((long long)LLONG_MIN, [dict st_longLongForKey:@"min"], nil);
+    STAssertEquals((long long)LLONG_MAX, [dict st_longLongForKey:@"max"], nil);
+    STAssertEquals((long long)123, [dict st_longLongForKey:@"one-two-three"], nil);
+    STAssertEquals((long long)124, [dict st_longLongForKey:@"nil" defaultValue:124], nil);
+    
+    dict = @{
+             @"min" : [NSNumber numberWithLongLong:LLONG_MIN],
+             @"max" : [NSNumber numberWithLongLong:LLONG_MAX],
+             @"zero" : [NSNumber numberWithLongLong:0],
+             };
+    STAssertEquals((long long)LLONG_MIN, [dict st_longLongForKey:@"min"], nil);
+    STAssertEquals((long long)LLONG_MAX, [dict st_longLongForKey:@"max"], nil);
+    STAssertEquals((long long)0, [dict st_longLongForKey:@"zero"], nil);
+    //
+    // unsignedLongLongForKey
+    //
+    dict = @{
+             @"max" : [NSString stringWithFormat:@"%llu", ULLONG_MAX],
+             @"one-two-three" : @"123",
+             };
+    STAssertEquals((unsigned long long)ULLONG_MAX, [dict st_unsignedLongLongForKey:@"max"], nil);
+    STAssertEquals((unsigned long long)123, [dict st_unsignedLongLongForKey:@"one-two-three"], nil);
+    STAssertEquals((unsigned long long)210, [dict st_unsignedLongLongForKey:@"nil" defaultValue:210], nil);
+    
+    dict = @{
+             @"max" : [NSNumber numberWithUnsignedLongLong:ULLONG_MAX],
+             @"zero" : [NSNumber numberWithUnsignedLongLong:0],
+             };
+    STAssertEquals((unsigned long long)ULLONG_MAX, [dict st_unsignedLongLongForKey:@"max"], nil);
+    STAssertEquals((unsigned long long)0, [dict st_unsignedLongLongForKey:@"zero"], nil);
+    //
+    // Alias of integers.
+    //
+    dict = @{
+    @"int8_min" : [NSString stringWithFormat:@"%d", INT8_MIN],
+    @"int8_max" : [NSString stringWithFormat:@"%d", INT8_MAX],
+    @"uint8_max" : [NSString stringWithFormat:@"%u", UINT8_MAX],
+    @"int16_min" : [NSString stringWithFormat:@"%d", INT16_MIN],
+    @"int16_max" : [NSString stringWithFormat:@"%d", INT16_MAX],
+    @"uint16_max" : [NSString stringWithFormat:@"%u", UINT16_MAX],
+    @"int32_min" : [NSString stringWithFormat:@"%d", INT32_MIN],
+    @"int32_max" : [NSString stringWithFormat:@"%d", INT32_MAX],
+    @"uint32_max" : [NSString stringWithFormat:@"%u", UINT32_MAX],
+    @"int64_min" : [NSString stringWithFormat:@"%lld", INT64_MIN],
+    @"int64_max" : [NSString stringWithFormat:@"%lld", INT64_MAX],
+    @"uint64_max" : [NSString stringWithFormat:@"%llu", UINT64_MAX],
     };
-    STAssertEquals(ULONG_LONG_MAX, [dict st_uint64ForKey:@"max"], nil);
-    STAssertEquals((uint64_t)0, [dict st_uint64ForKey:@"zero"], nil);
+    STAssertEquals((int8_t)INT8_MIN, [dict st_int8ForKey:@"int8_min"], nil);
+    STAssertEquals((int8_t)INT8_MAX, [dict st_int8ForKey:@"int8_max"], nil);
+    STAssertEquals((uint8_t)UINT8_MAX, [dict st_uint8ForKey:@"uint8_max"], nil);
+    STAssertEquals((int16_t)INT16_MIN, [dict st_int16ForKey:@"int16_min"], nil);
+    STAssertEquals((int16_t)INT16_MAX, [dict st_int16ForKey:@"int16_max"], nil);
+    STAssertEquals((uint16_t)UINT16_MAX, [dict st_uint16ForKey:@"uint16_max"], nil);
+    STAssertEquals((int32_t)INT32_MIN, [dict st_int32ForKey:@"int32_min"], nil);
+    STAssertEquals((int32_t)INT32_MAX, [dict st_int32ForKey:@"int32_max"], nil);
+    STAssertEquals((uint32_t)UINT32_MAX, [dict st_uint32ForKey:@"uint32_max"], nil);
+    STAssertEquals((int64_t)INT64_MIN, [dict st_int64ForKey:@"int64_min"], nil);
+    STAssertEquals((int64_t)INT64_MAX, [dict st_int64ForKey:@"int64_max"], nil);
+    STAssertEquals((uint64_t)UINT64_MAX, [dict st_uint64ForKey:@"uint64_max"], nil);
     //
     // floatForKey
     //
@@ -260,8 +365,23 @@
     @"string" : @"abc"
     };
     STAssertEquals((NSTimeInterval)123.0f, [[dict st_dateForKey:@"date"] timeIntervalSince1970], nil);
-    STAssertEquals((NSDictionary*)nil, [dict st_dictionaryForKey:@"string"], nil);
-    
+    STAssertEquals((NSTimeInterval)345.0f, [[dict st_dateForKey:@"date2" defaultValue:[NSDate dateWithTimeIntervalSince1970:345.0f]] timeIntervalSince1970], nil);
+    //
+    // dataForKey
+    //
+    dict = @{
+             @"data" : [@"data1" dataUsingEncoding:NSUTF8StringEncoding],
+             };
+    STAssertEqualObjects(@"data1", [[NSString alloc] initWithData:[dict st_dataForKey:@"data"] encoding:NSUTF8StringEncoding], nil);
+    STAssertEqualObjects(@"data2", [[NSString alloc] initWithData:[dict st_dataForKey:@"data2" defaultValue:[@"data2" dataUsingEncoding:NSUTF8StringEncoding]] encoding:NSUTF8StringEncoding], nil);
+    //
+    // URLForKey
+    //
+    dict = @{
+             @"url" : [NSURL URLWithString:@"http://stack3.net/"]
+             };
+    STAssertEqualObjects(@"http://stack3.net/", [[dict st_URLForKey:@"url"] absoluteString], nil);
+    STAssertEqualObjects(@"http://stack3.net/about", [[dict st_URLForKey:@"url2" defaultValue:[NSURL URLWithString:@"http://stack3.net/about"]] absoluteString], nil);
     //
     // objectForPath
     //
