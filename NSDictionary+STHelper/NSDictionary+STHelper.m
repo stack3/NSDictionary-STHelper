@@ -26,14 +26,342 @@
 
 @implementation NSDictionary (STHelper)
 
-#pragma mark -
-#pragma mark ForKey
+#pragma mark - ForKey
 
-- (id)st_objectForKey:(NSString*)key {
-    return [self st_objectForKey:key defaultValue:nil];
+- (BOOL)st_boolForKey:(NSString *)key defaultValue:(BOOL)defaultValue {
+    id obj = [self objectForKey:key];
+	if (obj && [obj isKindOfClass:[NSNumber class]]) {
+		return [(NSNumber *)obj boolValue];
+	} else {
+		return defaultValue;
+	}
 }
 
-- (id)st_objectForKey:(NSString*)key defaultValue:(id)defaultValue {
+- (BOOL)st_boolForKey:(NSString *)key
+{
+	return [self st_boolForKey:key defaultValue:NO];
+}
+
+- (NSInteger)st_integerForKey:(NSString *)key defaultValue:(NSInteger)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj integerValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return [(NSString *)obj integerValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (NSInteger)st_integerForKey:(NSString *)key
+{
+	return [self st_integerForKey:key defaultValue:0];
+}
+
+- (NSUInteger)st_unsignedIntegerForKey:(NSString *)key defaultValue:(NSUInteger)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj unsignedIntegerValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (NSInteger)strtoul([(NSString *)obj UTF8String], NULL, 0);
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (NSUInteger)st_unsignedIntegerForKey:(NSString *)key
+{
+	return [self st_unsignedIntegerForKey:key defaultValue:0];
+}
+
+- (char)st_charForKey:(NSString *)key defaultValue:(char)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj charValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (char)[(NSString *)obj integerValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (char)st_charForKey:(NSString *)key
+{
+	return [self st_charForKey:key defaultValue:0];
+}
+
+- (unsigned char)st_unsignedCharForKey:(NSString *)key defaultValue:(unsigned char)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj unsignedCharValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (unsigned char)[(NSString *)obj integerValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (unsigned char)st_unsignedCharForKey:(NSString *)key
+{
+	return [self st_unsignedCharForKey:key defaultValue:0];
+}
+
+- (short)st_shortForKey:(NSString *)key defaultValue:(short)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj shortValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (short)[(NSString *)obj integerValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (short)st_shortForKey:(NSString *)key
+{
+	return [self st_shortForKey:key defaultValue:0];
+}
+
+- (unsigned short)st_unsignedShortForKey:(NSString *)key defaultValue:(unsigned short)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj unsignedShortValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (unsigned char)[(NSString *)obj integerValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (unsigned short)st_unsignedShortForKey:(NSString *)key
+{
+	return [self st_unsignedShortForKey:key defaultValue:0];
+}
+
+- (long)st_longForKey:(NSString *)key defaultValue:(long)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj longValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (short)[(NSString *)obj integerValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (long)st_longForKey:(NSString *)key
+{
+	return [self st_longForKey:key defaultValue:0];
+}
+
+- (unsigned long)st_unsignedLongForKey:(NSString *)key defaultValue:(unsigned long)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj unsignedLongValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (unsigned long)strtoul([(NSString *)obj UTF8String], NULL, 0);
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (unsigned long)st_unsignedLongForKey:(NSString *)key
+{
+	return [self st_unsignedLongForKey:key defaultValue:0];
+}
+
+- (long long)st_longLongForKey:(NSString *)key defaultValue:(long long)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj longLongValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (long)strtoll([(NSString *)obj UTF8String], NULL, 0);
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (long long)st_longLongForKey:(NSString *)key
+{
+	return [self st_longLongForKey:key defaultValue:0];
+}
+
+- (unsigned long long)st_unsignedLongLongForKey:(NSString *)key defaultValue:(unsigned long long)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj unsignedLongLongValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return (unsigned long long)strtoull([(NSString *)obj UTF8String], NULL, 0);
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (unsigned long long)st_unsignedLongLongForKey:(NSString *)key
+{
+	return [self st_unsignedLongLongForKey:key defaultValue:0];
+}
+
+- (int8_t)st_int8ForKey:(NSString *)key defaultValue:(int8_t)defaultValue
+{
+    return [self st_charForKey:key defaultValue:defaultValue];
+}
+
+- (int8_t)st_int8ForKey:(NSString *)key
+{
+	return [self st_charForKey:key];
+}
+
+- (uint8_t)st_uint8ForKey:(NSString *)key defaultValue:(uint8_t)defaultValue
+{
+    return [self st_unsignedCharForKey:key defaultValue:defaultValue];
+}
+
+- (uint8_t)st_uint8ForKey:(NSString *)key
+{
+	return [self st_unsignedCharForKey:key];
+}
+
+- (int16_t)st_int16ForKey:(NSString *)key defaultValue:(int16_t)defaultValue
+{
+    return [self st_shortForKey:key defaultValue:defaultValue];
+}
+
+- (int16_t)st_int16ForKey:(NSString *)key
+{
+	return [self st_shortForKey:key];
+}
+
+- (uint16_t)st_uint16ForKey:(NSString *)key defaultValue:(uint16_t)defaultValue
+{
+    return [self st_unsignedShortForKey:key defaultValue:defaultValue];
+}
+
+- (uint16_t)st_uint16ForKey:(NSString *)key
+{
+	return [self st_unsignedShortForKey:key];
+}
+
+- (int32_t)st_int32ForKey:(NSString *)key defaultValue:(int32_t)defaultValue
+{
+    return [self st_longForKey:key defaultValue:defaultValue];
+}
+
+- (int32_t)st_int32ForKey:(NSString *)key
+{
+	return [self st_longForKey:key];
+}
+
+- (uint32_t)st_uint32ForKey:(NSString *)key defaultValue:(uint32_t)defaultValue
+{
+    return [self st_unsignedLongForKey:key defaultValue:defaultValue];
+}
+
+- (uint32_t)st_uint32ForKey:(NSString *)key
+{
+	return [self st_unsignedLongForKey:key];
+}
+
+- (int64_t)st_int64ForKey:(NSString *)key defaultValue:(int64_t)defaultValue
+{
+    return [self st_longLongForKey:key defaultValue:defaultValue];
+}
+
+- (int64_t)st_int64ForKey:(NSString *)key
+{
+	return [self st_longLongForKey:key];
+}
+
+- (uint64_t)st_uint64ForKey:(NSString *)key defaultValue:(uint64_t)defaultValue
+{
+	return [self st_unsignedLongLongForKey:key defaultValue:defaultValue];
+}
+
+- (uint64_t)st_uint64ForKey:(NSString *)key
+{
+	return [self st_unsignedLongLongForKey:key];
+}
+
+- (float)st_floatForKey:(NSString *)key defaultValue:(float)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj floatValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return [(NSString *)obj floatValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (float)st_floatForKey:(NSString *)key
+{
+	return [self st_floatForKey:key defaultValue:0];
+}
+
+- (double)st_doubleForKey:(NSString *)key defaultValue:(double)defaultValue
+{
+	id obj = [self objectForKey:key];
+	if (obj) {
+        if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj doubleValue];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            return [(NSString *)obj doubleValue];
+        }
+    }
+    
+    return defaultValue;
+}
+
+- (double)st_doubleForKey:(NSString *)key
+{
+	return [self st_doubleForKey:key defaultValue:0];
+}
+
+- (NSTimeInterval)st_timeIntervalForKey:(NSString *)key defaultValue:(NSTimeInterval)defaultValue
+{
+    return [self st_doubleForKey:key defaultValue:defaultValue];
+}
+
+- (NSTimeInterval)st_timeIntervalForKey:(NSString *)key
+{
+	return [self st_doubleForKey:key defaultValue:0];
+}
+
+- (id)st_objectForKey:(NSString *)key defaultValue:(NSString *)defaultValue
+{
 	id obj = [self objectForKey:key];
 	if (obj) {
 		return obj;
@@ -42,181 +370,32 @@
 	}
 }
 
-- (BOOL)st_boolForKey:(NSString*)key {
-	return [self st_boolForKey:key defaultValue:NO];
+- (id)st_objectForKey:(NSString *)key
+{
+    return [self st_objectForKey:key defaultValue:nil];
 }
 
-- (BOOL)st_boolForKey:(NSString*)key defaultValue:(BOOL)defaultValue {
-    id obj = [self objectForKey:key];
-	if (obj && [obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj boolValue];
-	} else {
-		return defaultValue;
-	}
-}
-
-- (NSInteger)st_integerForKey:(NSString*)key {
-	return [self st_integerForKey:key defaultValue:0];
-}
-
-- (NSInteger)st_integerForKey:(NSString*)key defaultValue:(NSInteger)defaultValue {
+- (NSString *)st_stringForKey:(NSString *)key defaultValue:(NSString *)defaultValue
+{
 	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
+	if (obj) {
+        if ([obj isKindOfClass:[NSString class]]) {
+            return obj;
+        } else if ([obj isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber *)obj stringValue];
+        }
+    }
     
-	if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj integerValue];
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		return (NSInteger)strtol([(NSString*)obj UTF8String], NULL, 0);
-	} else {
-		return defaultValue;
-	}
+    return defaultValue;
 }
 
-- (NSUInteger)st_uintegerForKey:(NSString*)key {
-	return [self st_uintegerForKey:key defaultValue:0];
-}
-
-- (NSUInteger)st_uintegerForKey:(NSString*)key defaultValue:(NSUInteger)defaultValue {
-	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
-    
-	if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj unsignedIntegerValue];
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		return (NSInteger)strtoul([(NSString*)obj UTF8String], NULL, 0);
-	} else {
-		return defaultValue;
-	}
-}
-
-- (int32_t)st_int32ForKey:(NSString*)key {
-	return [self st_int32ForKey:key defaultValue:0];
-}
-
-- (int32_t)st_int32ForKey:(NSString*)key defaultValue:(int32_t)defaultValue {
-    return [self st_integerForKey:key defaultValue:defaultValue];
-}
-
-- (uint32_t)st_uint32ForKey:(NSString*)key {
-	return [self st_uint32ForKey:key defaultValue:0];
-}
-
-- (uint32_t)st_uint32ForKey:(NSString*)key defaultValue:(uint32_t)defaultValue {
-    return [self st_uintegerForKey:key defaultValue:defaultValue];
-}
-
-- (int64_t)st_int64ForKey:(NSString*)key {
-	return [self st_int64ForKey:key defaultValue:0];
-}
-
-- (int64_t)st_int64ForKey:(NSString*)key defaultValue:(int64_t)defaultValue {
-	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
-	
-	if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj longLongValue];
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		return strtoll([(NSString*)obj UTF8String], NULL, 0);
-	} else {
-		return defaultValue;
-	}
-}
-
-- (uint64_t)st_uint64ForKey:(NSString*)key {
-	return [self st_uint64ForKey:key defaultValue:0];
-}
-
-- (uint64_t)st_uint64ForKey:(NSString*)key defaultValue:(uint64_t)defaultValue {
-	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
-	
-	if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj unsignedLongLongValue];
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		return strtoull([(NSString*)obj UTF8String], NULL, 0);
-	} else {
-		return defaultValue;
-	}
-}
-
-- (float)st_floatForKey:(NSString*)key {
-	return [self st_floatForKey:key defaultValue:0];
-}
-
-- (float)st_floatForKey:(NSString*)key defaultValue:(float)defaultValue {
-	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
-    
-	if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj floatValue];
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		return [(NSString*)obj floatValue];
-	} else {
-		return defaultValue;
-	}
-}
-
-- (double)st_doubleForKey:(NSString*)key {
-	return [self st_doubleForKey:key defaultValue:0];
-}
-
-- (double)st_doubleForKey:(NSString*)key defaultValue:(double)defaultValue {
-	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
-    
-	if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj doubleValue];
-	} else if ([obj isKindOfClass:[NSString class]]) {
-		return [(NSString*)obj doubleValue];
-	} else {
-		return defaultValue;
-	}
-}
-
-- (NSTimeInterval)st_timeIntervalForKey:(NSString*)key {
-	return [self st_doubleForKey:key defaultValue:0];
-}
-
-- (NSTimeInterval)st_timeIntervalForKey:(NSString*)key defaultValue:(NSTimeInterval)defaultValue {
-    return [self st_doubleForKey:key defaultValue:defaultValue];
-}
-
-- (NSString*)st_stringForKey:(NSString*)key {
+- (NSString *)st_stringForKey:(NSString *)key
+{
 	return [self st_stringForKey:key defaultValue:nil];
 }
 
-- (NSString*)st_stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue {
-	id obj = [self objectForKey:key];
-	if (!obj) {
-		return defaultValue;
-	}
-    
-    if ([obj isKindOfClass:[NSString class]]) {
-		return obj;
-	} else if ([obj isKindOfClass:[NSNumber class]]) {
-		return [(NSNumber*)obj stringValue];
-	} else {
-		return defaultValue;
-	}
-}
-
-- (NSArray*)st_arrayForKey:(NSString*)key {
-	return [self st_arrayForKey:key defaultValue:nil];
-}
-
-- (NSArray*)st_arrayForKey:(NSString*)key defaultValue:(NSArray*)defaultValue {
+- (NSArray *)st_arrayForKey:(NSString *)key defaultValue:(NSArray *)defaultValue
+{
 	id obj = [self objectForKey:key];
     if (obj && [obj isKindOfClass:[NSArray class]]) {
 		return obj;
@@ -225,11 +404,13 @@
 	}
 }
 
-- (NSDictionary*)st_dictionaryForKey:(NSString*)key {
-	return [self st_dictionaryForKey:key defaultValue:nil];
+- (NSArray *)st_arrayForKey:(NSString *)key
+{
+	return [self st_arrayForKey:key defaultValue:nil];
 }
 
-- (NSDictionary*)st_dictionaryForKey:(NSString*)key defaultValue:(NSDictionary*)defaultValue {
+- (NSDictionary *)st_dictionaryForKey:(NSString *)key defaultValue:(NSDictionary *)defaultValue
+{
 	id obj = [self objectForKey:key];
     if (obj && [obj isKindOfClass:[NSDictionary class]]) {
 		return obj;
@@ -238,11 +419,13 @@
 	}
 }
 
-- (NSDate*)st_dateForKey:(NSString*)key {
-	return [self st_dateForKey:key defaultValue:nil];
+- (NSDictionary *)st_dictionaryForKey:(NSString *)key
+{
+	return [self st_dictionaryForKey:key defaultValue:nil];
 }
 
-- (NSDate*)st_dateForKey:(NSString*)key defaultValue:(NSDate*)defaultValue {
+- (NSDate *)st_dateForKey:(NSString *)key defaultValue:(NSDate *)defaultValue
+{
 	id obj = [self objectForKey:key];
     if (obj && [obj isKindOfClass:[NSDate class]]) {
 		return obj;
@@ -251,12 +434,12 @@
 	}
 }
 
-- (id)st_dataForKey:(NSString*)key
+- (NSDate *)st_dateForKey:(NSString *)key
 {
-    return [self st_dataForKey:key defaultValue:nil];
+	return [self st_dateForKey:key defaultValue:nil];
 }
 
-- (id)st_dataForKey:(NSString *)key defaultValue:(id)defaultValue
+- (NSData *)st_dataForKey:(NSString  *)key defaultValue:(NSData *)defaultValue
 {
     id obj = [self objectForKey:key];
 	if (obj && [obj isKindOfClass:[NSData class]]) {
@@ -266,10 +449,15 @@
 	}
 }
 
-#pragma mark -
-#pragma mark ForPath
+- (NSData *)st_dataForKey:(NSString *)key
+{
+    return [self st_dataForKey:key defaultValue:nil];
+}
 
-- (NSDictionary*)st_dictionaryForPaths:(NSArray*)paths {
+#pragma mark - ForPath
+
+- (NSDictionary *)st_dictionaryForPaths:(NSArray *)paths
+{
     if (paths.count == 0) {
         return nil;
     }
@@ -286,11 +474,13 @@
     return target;
 }
 
-- (NSObject*)st_objectForPath:(NSString*)path {
+- (NSObject *)st_objectForPath:(NSString *)path
+{
     return [self st_objectForPath:path defaultValue:nil];
 }
 
-- (NSObject*)st_objectForPath:(NSString*)path defaultValue:(NSObject*)defaultValue {
+- (NSObject *)st_objectForPath:(NSString *)path defaultValue:(NSObject *)defaultValue
+{
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_objectForKey:paths.lastObject];
@@ -302,11 +492,13 @@
     return defaultValue;
 }
 
-- (BOOL)st_boolForPath:(NSString*)path {
+- (BOOL)st_boolForPath:(NSString *)path
+{
     return [self st_boolForPath:path defaultValue:NO];
 }
 
-- (BOOL)st_boolForPath:(NSString*)path defaultValue:(BOOL)defaultValue {
+- (BOOL)st_boolForPath:(NSString *)path defaultValue:(BOOL)defaultValue
+{
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_boolForKey:paths.lastObject];
@@ -318,11 +510,11 @@
     return defaultValue;
 }
 
-- (NSInteger)st_integerForPath:(NSString*)path {
+- (NSInteger)st_integerForPath:(NSString *)path {
     return [self st_integerForPath:path defaultValue:0];
 }
 
-- (NSInteger)st_integerForPath:(NSString*)path defaultValue:(NSInteger)defaultValue {
+- (NSInteger)st_integerForPath:(NSString *)path defaultValue:(NSInteger)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_integerForKey:paths.lastObject];
@@ -334,27 +526,27 @@
     return defaultValue;
 }
 
-- (NSUInteger)st_uintegerForPath:(NSString*)path {
+- (NSUInteger)st_uintegerForPath:(NSString *)path {
     return [self st_uintegerForPath:path defaultValue:0];
 }
 
-- (NSUInteger)st_uintegerForPath:(NSString*)path defaultValue:(NSUInteger)defaultValue {
+- (NSUInteger)st_uintegerForPath:(NSString *)path defaultValue:(NSUInteger)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
-        return [self st_uintegerForKey:paths.lastObject];
+        return [self st_unsignedIntegerForKey:paths.lastObject];
     } else if (paths.count >= 2) {
         NSDictionary *obj = [self st_dictionaryForPaths:paths];
-        return [obj st_uintegerForKey:paths.lastObject];
+        return [obj st_unsignedIntegerForKey:paths.lastObject];
     }
     
     return defaultValue;
 }
 
-- (int32_t)st_int32ForPath:(NSString*)path {
+- (int32_t)st_int32ForPath:(NSString *)path {
     return [self st_int32ForPath:path defaultValue:0];
 }
 
-- (int32_t)st_int32ForPath:(NSString*)path defaultValue:(int32_t)defaultValue {
+- (int32_t)st_int32ForPath:(NSString *)path defaultValue:(int32_t)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_int32ForKey:paths.lastObject];
@@ -366,11 +558,11 @@
     return defaultValue;
 }
 
-- (uint32_t)st_uint32ForPath:(NSString*)path {
+- (uint32_t)st_uint32ForPath:(NSString *)path {
     return [self st_uint32ForPath:path defaultValue:0];
 }
 
-- (uint32_t)st_uint32ForPath:(NSString*)path defaultValue:(uint32_t)defaultValue {
+- (uint32_t)st_uint32ForPath:(NSString *)path defaultValue:(uint32_t)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_uint32ForKey:paths.lastObject];
@@ -382,11 +574,11 @@
     return defaultValue;
 }
 
-- (int64_t)st_int64ForPath:(NSString*)path {
+- (int64_t)st_int64ForPath:(NSString *)path {
     return [self st_int64ForPath:path defaultValue:0];
 }
 
-- (int64_t)st_int64ForPath:(NSString*)path defaultValue:(int64_t)defaultValue {
+- (int64_t)st_int64ForPath:(NSString *)path defaultValue:(int64_t)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_int64ForKey:paths.lastObject];
@@ -398,11 +590,11 @@
     return defaultValue;
 }
 
-- (uint64_t)st_uint64ForPath:(NSString*)path {
+- (uint64_t)st_uint64ForPath:(NSString *)path {
     return [self st_uint64ForPath:path defaultValue:0];
 }
 
-- (uint64_t)st_uint64ForPath:(NSString*)path defaultValue:(uint64_t)defaultValue {
+- (uint64_t)st_uint64ForPath:(NSString *)path defaultValue:(uint64_t)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_uint64ForKey:paths.lastObject];
@@ -414,11 +606,11 @@
     return defaultValue;
 }
 
-- (float)st_floatForPath:(NSString*)path {
+- (float)st_floatForPath:(NSString *)path {
     return [self st_floatForPath:path defaultValue:0];
 }
 
-- (float)st_floatForPath:(NSString*)path defaultValue:(float)defaultValue {
+- (float)st_floatForPath:(NSString *)path defaultValue:(float)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_floatForKey:paths.lastObject];
@@ -430,11 +622,11 @@
     return defaultValue;
 }
 
-- (double)st_doubleForPath:(NSString*)path {
+- (double)st_doubleForPath:(NSString *)path {
     return [self st_doubleForPath:path defaultValue:0];
 }
 
-- (double)st_doubleForPath:(NSString*)path defaultValue:(double)defaultValue {
+- (double)st_doubleForPath:(NSString *)path defaultValue:(double)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_doubleForKey:paths.lastObject];
@@ -446,11 +638,11 @@
     return defaultValue;
 }
 
-- (NSString*)st_stringForPath:(NSString*)path {
+- (NSString *)st_stringForPath:(NSString *)path {
     return [self st_stringForPath:path defaultValue:nil];
 }
 
-- (NSString*)st_stringForPath:(NSString*)path defaultValue:(NSString*)defaultValue {
+- (NSString *)st_stringForPath:(NSString *)path defaultValue:(NSString *)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_stringForKey:paths.lastObject];
@@ -462,11 +654,11 @@
     return defaultValue;
 }
 
-- (NSArray*)st_arrayForPath:(NSString*)path {
+- (NSArray *)st_arrayForPath:(NSString *)path {
     return [self st_arrayForPath:path defaultValue:nil];
 }
 
-- (NSArray*)st_arrayForPath:(NSString*)path defaultValue:(NSArray*)defaultValue {
+- (NSArray *)st_arrayForPath:(NSString *)path defaultValue:(NSArray *)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_arrayForKey:paths.lastObject];
@@ -478,11 +670,11 @@
     return defaultValue;
 }
 
-- (NSDictionary*)st_dictionaryForPath:(NSString*)path {
+- (NSDictionary *)st_dictionaryForPath:(NSString *)path {
     return [self st_dictionaryForPath:path defaultValue:nil];
 }
 
-- (NSDictionary*)st_dictionaryForPath:(NSString*)path defaultValue:(NSDictionary*)defaultValue {
+- (NSDictionary *)st_dictionaryForPath:(NSString *)path defaultValue:(NSDictionary *)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_dictionaryForKey:paths.lastObject];
@@ -494,11 +686,11 @@
     return defaultValue;
 }
 
-- (NSDate*)st_dateForPath:(NSString*)path {
+- (NSDate *)st_dateForPath:(NSString *)path {
     return [self st_dateForPath:path defaultValue:nil];
 }
 
-- (NSDate*)st_dateForPath:(NSString*)path defaultValue:(NSDate*)defaultValue {
+- (NSDate *)st_dateForPath:(NSString *)path defaultValue:(NSDate *)defaultValue {
     NSArray *paths = [path componentsSeparatedByString:@"."];
     if (paths.count == 1) {
         return [self st_dateForKey:paths.lastObject];
