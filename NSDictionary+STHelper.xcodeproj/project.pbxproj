@@ -15,6 +15,7 @@
 		1E2FA4011649DFDE00DD1748 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2FA3FF1649DFDE00DD1748 /* InfoPlist.strings */; };
 		1E2FA4141649E06100DD1748 /* NSDictionary+STHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA4111649E06100DD1748 /* NSDictionary+STHelper.m */; };
 		B7DFBBF017363AAF00BAEE9F /* NSDictionary_STHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DFBBEF17363AAF00BAEE9F /* NSDictionary_STHelperTests.m */; };
+		B7DFBBF317373C6300BAEE9F /* NSMutableDictionary+STHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DFBBF217373C6300BAEE9F /* NSMutableDictionary+STHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		1E2FA4111649E06100DD1748 /* NSDictionary+STHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+STHelper.m"; sourceTree = "<group>"; };
 		B7DFBBEE17363AAF00BAEE9F /* NSDictionary_STHelperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_STHelperTests.h; sourceTree = "<group>"; };
 		B7DFBBEF17363AAF00BAEE9F /* NSDictionary_STHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_STHelperTests.m; sourceTree = "<group>"; };
+		B7DFBBF117373C6300BAEE9F /* NSMutableDictionary+STHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+STHelper.h"; sourceTree = "<group>"; };
+		B7DFBBF217373C6300BAEE9F /* NSMutableDictionary+STHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+STHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 			children = (
 				1E2FA4101649E06100DD1748 /* NSDictionary+STHelper.h */,
 				1E2FA4111649E06100DD1748 /* NSDictionary+STHelper.m */,
+				B7DFBBF117373C6300BAEE9F /* NSMutableDictionary+STHelper.h */,
+				B7DFBBF217373C6300BAEE9F /* NSMutableDictionary+STHelper.m */,
 				1E2FA3E81649DFDD00DD1748 /* Supporting Files */,
 			);
 			path = "NSDictionary+STHelper";
@@ -242,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E2FA4141649E06100DD1748 /* NSDictionary+STHelper.m in Sources */,
+				B7DFBBF317373C6300BAEE9F /* NSMutableDictionary+STHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
