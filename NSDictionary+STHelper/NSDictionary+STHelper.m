@@ -276,22 +276,22 @@
 
 - (int32_t)st_int32ForKey:(NSString *)key defaultValue:(int32_t)defaultValue
 {
-    return [self st_longForKey:key defaultValue:defaultValue];
+    return (int32_t)[self st_longForKey:key defaultValue:defaultValue];
 }
 
 - (int32_t)st_int32ForKey:(NSString *)key
 {
-	return [self st_longForKey:key];
+	return (int32_t)[self st_longForKey:key];
 }
 
 - (uint32_t)st_uint32ForKey:(NSString *)key defaultValue:(uint32_t)defaultValue
 {
-    return [self st_unsignedLongForKey:key defaultValue:defaultValue];
+    return (uint32_t)[self st_unsignedLongForKey:key defaultValue:defaultValue];
 }
 
 - (uint32_t)st_uint32ForKey:(NSString *)key
 {
-	return [self st_unsignedLongForKey:key];
+	return (uint32_t)[self st_unsignedLongForKey:key];
 }
 
 - (int64_t)st_int64ForKey:(NSString *)key defaultValue:(int64_t)defaultValue
@@ -731,22 +731,22 @@
 
 - (int32_t)st_int32ForPath:(NSString *)path
 {
-    return [self st_longForPath:path];
+    return (int32_t)[self st_longForPath:path];
 }
 
 - (int32_t)st_int32ForPath:(NSString *)path defaultValue:(int32_t)defaultValue
 {
-    return [self st_longForPath:path defaultValue:defaultValue];
+    return (int32_t)[self st_longForPath:path defaultValue:defaultValue];
 }
 
 - (uint32_t)st_uint32ForPath:(NSString *)path
 {
-    return [self st_unsignedLongForPath:path];
+    return (uint32_t)[self st_unsignedLongForPath:path];
 }
 
 - (uint32_t)st_uint32ForPath:(NSString *)path defaultValue:(uint32_t)defaultValue
 {
-    return [self st_unsignedLongForPath:path defaultValue:defaultValue];
+    return (uint32_t)[self st_unsignedLongForPath:path defaultValue:defaultValue];
 }
 
 - (int64_t)st_int64ForPath:(NSString *)path
